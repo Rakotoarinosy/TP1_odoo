@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+      <menuitem id="menu_product_trending" 
+            name="Trending Product"
+            parent="sale.sale_menu_root"
+            action='action_product_trending'
+            sequence="70"/>
+
+</odoo>
