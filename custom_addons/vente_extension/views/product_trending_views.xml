@@ -11,11 +11,34 @@
         <field name="model">product.trending</field>
         <field name="arch" type="xml">
             <tree>
+                <header>
+                    <button name="compute_trending_products" type="object" string="Recalculer les Produits Tendance" class="btn-primary"/>
+                </header>
                 <field name="product_id"/>
                 <field name="month"/>
                 <field name="year"/>
                 <field name="total_quantity"/>
+                <button name="compute_trending_products" type="object" string="Recalculer les Produits Tendance" class="btn-primary"/>
             </tree>
+        </field>
+    </record>
+        <record id="view_product_trending_form" model="ir.ui.view">
+        <field name="name">product.trending.form</field>
+        <field name="model">product.trending</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="compute_trending_products" type="object" string="Recalculer les Produits Tendance" class="btn-primary"/>
+                </header>
+                <sheet>
+                    <group>
+                        <field name="product_id"/>
+                        <field name="month"/>
+                        <field name="year"/>
+                        <field name="total_quantity"/>
+                    </group>
+                </sheet>
+            </form>
         </field>
     </record>
 </odoo>

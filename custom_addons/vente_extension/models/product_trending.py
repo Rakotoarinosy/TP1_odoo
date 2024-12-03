@@ -1,7 +1,6 @@
-import logging
 from collections import defaultdict
+import logging
 from odoo import models, fields, api
-from odoo.exceptions import UserError
 
 class ProductTrending(models.Model):
     _name = 'product.trending'
@@ -18,12 +17,13 @@ class ProductTrending(models.Model):
     year = fields.Integer(string='Année', required=True)
     total_quantity = fields.Float(string='Quantité Totale Vendue', required=True)
 
-    @api.model
+    # @api.model
     def compute_trending_products(self):
         logger = logging.getLogger(__name__)
         sales_orders = self.env['sale.order'].search([])
         monthly_sales = defaultdict(lambda: defaultdict(int))
 
+        # Collecte des ventes mensuelles
         for order in sales_orders:
             year_month = (order.date_order.year, order.date_order.month)
             for line in order.order_line.filtered(lambda l: l.product_id):
@@ -32,8 +32,10 @@ class ProductTrending(models.Model):
             if missing_products:
                 logger.error(f"Commande {order.name} lignes {missing_products} sans produit. Ignorées.")
 
-        # self.search([]).unlink()
+        # Supprimer les anciens enregistrements avant d'ajouter les nouveaux
+        self.search([]).unlink()
 
+        # Créer des enregistrements pour les produits tendance
         for (year, month), products in monthly_sales.items():
             best_selling_product_id, best_selling_quantity = max(products.items(), key=lambda x: x[1])
             self.create({
