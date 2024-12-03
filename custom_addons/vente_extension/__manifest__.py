@@ -11,6 +11,7 @@
         'views/product_variation_views.xml',
         'views/category_variation_views.xml', 
         'views/product_trending_views.xml',  
+        'views/category_trending_views.xml',
         'views/product_trending_menu.xml',
         'views/sale_order_views.xml',
     ],

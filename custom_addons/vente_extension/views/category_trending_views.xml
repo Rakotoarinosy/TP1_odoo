@@ -1,35 +1,32 @@
 <?xml version='1.0' encoding='utf-8'?>
 <odoo>
-    <record id="action_product_trending" model="ir.actions.act_window">
-        <field name="name">Trending Products</field>
-        <field name="res_model">product.trending</field>
+    <record id="action_category_trending" model="ir.actions.act_window">
+        <field name="name">Trending Categories</field>
+        <field name="res_model">category.trending</field>
         <field name="view_mode">tree,form</field>
     </record>
 
-    <record id="view_product_trending_tree" model="ir.ui.view">
-        <field name="name">product.trending.tree</field>
-        <field name="model">product.trending</field>
+    <record id="view_category_trending_tree" model="ir.ui.view">
+        <field name="name">category.trending.tree</field>
+        <field name="model">category.trending</field>
         <field name="arch" type="xml">
             <tree>
-                <header>
-                    <button name="compute_trending_products" type="object" string="Recalculer les Produits Tendance" class="btn-primary"/>
-                </header>
-                <field name="product_id"/>
+                <field name="category_id"/>
                 <field name="month"/>
                 <field name="year"/>
                 <field name="total_quantity"/>
-                <button name="compute_trending_products" type="object" string="Recalculer les Produits Tendance" class="btn-primary"/>
+                <button name="compute_trending_categories" type="object" string="Recalculer les Catégories Tendance" class="btn-primary"/>
             </tree>
         </field>
     </record>
-    <record id="view_product_trending_form" model="ir.ui.view">
-        <field name="name">product.trending.form</field>
-        <field name="model">product.trending</field>
+    <record id="view_category_trending_form" model="ir.ui.view">
+        <field name="name">category.trending.form</field>
+        <field name="model">category.trending</field>
         <field name="arch" type="xml">
             <form>
                 <sheet>
                     <group>
-                        <field name="product_id"/>
+                        <field name="category_id"/>
                         <field name="month"/>
                         <field name="year"/>
                         <field name="total_quantity"/>
@@ -38,20 +35,19 @@
             </form>
         </field>
     </record>
-    <record id="view_product_trending_search" model="ir.ui.view">
-        <field name="name">product.trending.search</field>
-        <field name="model">product.trending</field>
+    <record id="view_category_trending_search" model="ir.ui.view">
+        <field name="name">category.trending.search</field>
+        <field name="model">category.trending</field>
         <field name="arch" type="xml">
             <search>
                 <filter string="Par Mois" name="group_by_month" context="{'group_by': 'month'}"/>
                 <filter string="Par Année" name="group_by_year" context="{'group_by': 'year'}"/>
                 <group expand="1" string="Recherche Avancée">
-                    <field name="product_id" string="Produit"/>
+                    <field name="category_id" string="Catégorie"/>
                     <field name="month" string="Mois"/>
                     <field name="year" string="Année"/>
                 </group>
             </search>
         </field>
     </record>
-
 </odoo>
