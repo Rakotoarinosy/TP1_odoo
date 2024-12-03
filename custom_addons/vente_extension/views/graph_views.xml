@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_order_graph_discount" model="ir.ui.view">
+        <field name="name">sale.order.graph.discount</field>
+        <field name="model">sale.order</field>
+        <field name="arch" type="xml">
+            <graph string="Sales with and without discounts" type="bar">
+                    <field name="amount_total" type="measure"/>
+                    <field name="has_discount" type="dimension"/>
+            </graph>
+        </field>
+    </record>
+
+</odoo>

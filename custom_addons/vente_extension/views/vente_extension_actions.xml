@@ -29,6 +29,15 @@
         <field name="domain">[('discount_percentage','!=', False)]</field>
     </record>
 
+    <!--Action pour l'affichage du graphe-->
+    <record id="action_order_graph_discount" model="ir.actions.act_window">
+        <field name="name">Graph of sales with/out discount</field>
+        <field name="res_model">sale.order</field>
+        <field name="view_mode">graph</field>
+        <field name="view_id" ref="view_order_graph_discount"/>
+        <field name="context">{}</field>
+    </record>
+
     <menuitem
         id="sales_ext_menu"
         name="Vente extension"
@@ -38,4 +47,11 @@
         <menuitem id="product_variation_menu" name="Product price variations"  action="action_product_variation" sequence="20"/>
         <menuitem id="category-variation_menu" name="Category price variations" action="action_category_variation" sequence="30"/>
     </menuitem>
+
+    <menuitem
+        id="order_graph_discount_menu"
+        name="Graph with/out discounts"
+        parent="sale.sale_menu_root"
+        action="action_order_graph_discount"
+        sequence="80"/>
 </odoo>

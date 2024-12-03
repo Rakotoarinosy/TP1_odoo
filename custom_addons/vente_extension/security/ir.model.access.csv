@@ -1,2 +1,3 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_product_trending,product.trending,model_product_trending,base.group_user,1,1,1,1
 access_custom_weekday,access.custom.weekday,model_custom_weekday,base.group_user,1,1,1,1
