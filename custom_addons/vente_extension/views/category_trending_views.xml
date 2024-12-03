@@ -11,11 +11,13 @@
         <field name="model">category.trending</field>
         <field name="arch" type="xml">
             <tree>
+                <header>
+                    <button name="compute_trending_categories" type="object" string="Recalculer les Catégories Tendance" class="btn-primary"/>
+                </header>
                 <field name="category_id"/>
                 <field name="month"/>
                 <field name="year"/>
                 <field name="total_quantity"/>
-                <button name="compute_trending_categories" type="object" string="Recalculer les Catégories Tendance" class="btn-primary"/>
             </tree>
         </field>
     </record>

@@ -18,7 +18,6 @@
                 <field name="month"/>
                 <field name="year"/>
                 <field name="total_quantity"/>
-                <button name="compute_trending_products" type="object" string="Recalculer les Produits Tendance" class="btn-primary"/>
             </tree>
         </field>
     </record>
