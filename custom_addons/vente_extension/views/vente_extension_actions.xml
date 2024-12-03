@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!--Actions pour les jours specifiques-->
+    <record id="action_custom_weekday" model="ir.actions.act_window">
+        <field name="name">Specific Days</field>
+        <field name="res_model">custom.weekday</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view-nocontent_create">
+                No specific days found. Create one now!
+            </p>
+        </field>
+    </record>
+
+    <!--Action pour l'affichage des produits avec variations-->
+    <record id="action_product_variation" model="ir.actions.act_window">
+        <field name="name">Product price variation</field>
+        <field name="res_model">product.template</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('variation_price', '!=', False)]</field>
+    </record>
+
+    <!--Action pour l'affichage des categories avec variations-->
+    <record id="action_category_variation" model="ir.actions.act_window">
+        <field name="name">Category price variations</field>
+        <field name="res_model">product.category</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('discount_percentage','!=', False)]</field>
+    </record>
+
+    <menuitem
+        id="sales_ext_menu"
+        name="Vente extension"
+        parent = "sale.sale_menu_root"
+        sequence="60">
+        <menuitem id="custom_weekday_menu" name="Specific days" action="action_custom_weekday" sequence="10"/>
+        <menuitem id="product_variation_menu" name="Product price variations"  action="action_product_variation" sequence="20"/>
+        <menuitem id="category-variation_menu" name="Category price variations" action="action_category_variation" sequence="30"/>
+    </menuitem>
+</odoo>
