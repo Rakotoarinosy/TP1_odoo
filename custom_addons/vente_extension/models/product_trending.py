@@ -32,7 +32,7 @@ class ProductTrending(models.Model):
             if missing_products:
                 logger.error(f"Commande {order.name} lignes {missing_products} sans produit. Ignorées.")
 
-        self.search([]).unlink()
+        # self.search([]).unlink()
 
         for (year, month), products in monthly_sales.items():
             best_selling_product_id, best_selling_quantity = max(products.items(), key=lambda x: x[1])
