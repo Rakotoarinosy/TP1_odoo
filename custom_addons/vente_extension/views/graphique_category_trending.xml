@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <record id="action_product_trending_category_graph" model="ir.actions.act_window">
+        <field name="name">Trending Categories Chart</field>
+        <field name="res_model">category.trending</field>
+        <field name="view_mode">graph,tree</field>
+    </record>
+
+    <record id="view_product_trending_category_graph" model="ir.ui.view">
+        <field name="name">category.trending.graph</field>
+        <field name="model">category.trending</field>
+        <field name="arch" type="xml">
+            <graph string="Trending Categories" type="bar">
+                <field name="total_quantity" type="measure"/>
+                <field name="category_id" type="row"/>
+                <field name="month" type="col"/>
+                <field name="year" invisible="1"/>
+            </graph>
+        </field>
+    </record>
+
+</odoo>
