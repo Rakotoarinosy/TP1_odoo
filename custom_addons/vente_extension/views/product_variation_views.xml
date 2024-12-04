@@ -3,15 +3,17 @@
     <record id="product_variation_view_form" model="ir.ui.view">
         <field name="name">product.variation.view.form</field>
         <field name="model">product.template</field>
-        <field name="inherit_id" ref="product.product_template_only_form_view"/>
+        <field name="inherit_id" ref="product.product_template_form_view"/>
        <field name="arch" type="xml">
-            <xpath expr="//field[@name='list_price']" position="after">
-                <group>
-                    <field name="variation_price"/>
-                    <field name="interval_start"/>
-                    <field name="interval_end"/>
-                    <field name="specific_days" widget="many2many_tags"/>
-                </group>
+            <xpath expr="//notebook">
+                <page string="Price variation">
+                    <group>
+                        <field name="variation_price" string="Price variation %"/>
+                        <field name="interval_start" string="Date start"/>
+                        <field name="interval_end" string="Date end"/>
+                        <field name="specific_days" string="Specific days" widget="many2many_tags"/>
+                    </group>
+                </page>
             </xpath>
         </field>
     </record>

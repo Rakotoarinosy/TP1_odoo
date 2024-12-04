@@ -40,12 +40,12 @@
 
     <menuitem
         id="sales_ext_menu"
-        name="Vente extension"
+        name="Sales extension"
         parent = "sale.sale_menu_root"
         sequence="60">
         <menuitem id="custom_weekday_menu" name="Specific days" action="action_custom_weekday" sequence="10"/>
         <menuitem id="product_variation_menu" name="Product price variations"  action="action_product_variation" sequence="20"/>
-        <menuitem id="category-variation_menu" name="Category price variations" action="action_category_variation" sequence="30"/>
+        <!--<menuitem id="category-variation_menu" name="Category price variations" action="action_category_variation" sequence="30"/>-->
     </menuitem>
 
     <menuitem
