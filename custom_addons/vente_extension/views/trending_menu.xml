@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <menuitem id="menu_product_trending" 
+                name="Trending"
+                parent="sale.sale_menu_root"
+                sequence="70"/>
+            
+    <menuitem id="menu_trending_products" 
+                name="Trending Products" 
+                parent="menu_product_trending" 
+                action="action_product_trending"/>
+
+    <menuitem id="menu_trending_categories" 
+                name="Trending Categories" 
+                parent="menu_product_trending" 
+                action="action_category_trending"/>
+    
+    <menuitem id="sub_menu_trending_products" 
+                name="Trending Products" 
+                parent="menu_trending_products" 
+                action="action_product_trending"/>
+
+    <menuitem id="sub_menu_trending_categories" 
+                name="Trending Categories" 
+                parent="menu_trending_categories" 
+                action="action_category_trending"/>
+
+    <menuitem id="menu_product_trending_graph"
+                name="Trending Products Chart"
+                parent="menu_trending_products"
+                action="action_product_trending_graph"/>
+
+    <menuitem id="menu_product_trending_category_graph"
+                name="Trending Categories Chart"
+                parent="menu_trending_categories"
+                action="action_product_trending_category_graph"/>
+</odoo>
