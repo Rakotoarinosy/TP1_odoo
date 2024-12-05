@@ -2,29 +2,6 @@
 
 Ce repository contient une extension personnalisée pour le module **Ventes** d'Odoo. Ce projet a été réalisé dans le cadre du TP1 et vise à enrichir les fonctionnalités existantes du module standard de gestion des ventes.  
 
-## Structure du Projet  
-
-La structure du projet doit respecter l'organisation suivante :  
-
-```bash  
-odoo/  
-├── addons/                  # Modules standard d'Odoo  
-├── custom_addons/           # Extensions et modules personnalisés  
-│   └── vente_extension/     # Module personnalisé du TP1  
-├── debian/                  # Fichiers de configuration Debian  
-├── doc/                     # Documentation du projet  
-├── odoo/                    # Source principale d'Odoo  
-├── odoo-bin                 # Script de lancement d'Odoo  
-├── requirements.txt         # Dépendances Python nécessaires  
-├── setup.py                 # Script d'installation du projet  
-├── setup.cfg                # Configuration de l'installation  
-├── MANIFEST.in              # Liste des fichiers à inclure dans la distribution  
-├── SECURITY.md              # Notes de sécurité  
-├── CONTRIBUTING.md          # Guide de contribution  
-├── LICENSE                  # Licence du projet  
-├── README.md                # Présentation et instructions du projet  
-├── venv/                    # Environnement virtuel Python  
-└── file.conf                # Fichier de configuration personnalisé  
 
 ## Détails Techniques  
 
@@ -71,3 +48,28 @@ Le module **vente_extension** est une extension personnalisée du module **Vente
 ## Remerciements
 
 Merci pour votre intérêt pour ce projet. N’hésitez pas à ouvrir des issues ou à proposer des améliorations via des pull requests.
+
+## Structure du Projet  
+
+La structure du projet doit respecter l'organisation suivante :  
+
+```bash  
+odoo/  
+├── addons/                  # Modules standard d'Odoo  
+├── custom_addons/           # Extensions et modules personnalisés  
+│   └── vente_extension/     # Module personnalisé du TP1  
+├── debian/                  # Fichiers de configuration Debian  
+├── doc/                     # Documentation du projet  
+├── odoo/                    # Source principale d'Odoo  
+├── odoo-bin                 # Script de lancement d'Odoo  
+├── requirements.txt         # Dépendances Python nécessaires  
+├── setup.py                 # Script d'installation du projet  
+├── setup.cfg                # Configuration de l'installation  
+├── MANIFEST.in              # Liste des fichiers à inclure dans la distribution  
+├── SECURITY.md              # Notes de sécurité  
+├── CONTRIBUTING.md          # Guide de contribution  
+├── LICENSE                  # Licence du projet  
+├── README.md                # Présentation et instructions du projet  
+├── venv/                    # Environnement virtuel Python  
+└── file.conf                # Fichier de configuration personnalisé  
+
